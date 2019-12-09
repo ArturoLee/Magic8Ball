@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,59 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Magic_8_Ball" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball1" translatesAutoresizingMaskIntoConstraints="NO" id="uPQ-M5-wdY">
+                                <rect key="frame" x="20" y="197" width="335" height="273"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask Me Anything..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZV-eL-JQt">
+                                <rect key="frame" x="50.5" y="116" width="274" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="0.082352941176470587" green="0.098039215686274508" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2G-rx-u0L">
+                                <rect key="frame" x="103" y="510" width="169" height="60"/>
+                                <color key="backgroundColor" red="0.082352941176470587" green="0.098039215686274508" blue="0.396078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="169" id="7Ph-ib-tcf"/>
+                                    <constraint firstAttribute="height" constant="60" id="Y6x-Ea-KfU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Ask">
+                                    <color key="titleColor" red="0.27450980392156865" green="0.70980392156862748" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="askPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mGq-xN-0c8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.27450980392156865" green="0.70980392156862748" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uPQ-M5-wdY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2ag-95-R7S"/>
+                            <constraint firstItem="cZV-eL-JQt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5B1-PV-oCV"/>
+                            <constraint firstItem="uPQ-M5-wdY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="E8v-fe-0yr"/>
+                            <constraint firstItem="x2G-rx-u0L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JzX-ZU-s7q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uPQ-M5-wdY" secondAttribute="trailing" constant="20" id="etQ-52-jFS"/>
+                            <constraint firstItem="x2G-rx-u0L" firstAttribute="top" secondItem="uPQ-M5-wdY" secondAttribute="bottom" constant="40" id="jPQ-ko-Pil"/>
+                            <constraint firstItem="uPQ-M5-wdY" firstAttribute="top" secondItem="cZV-eL-JQt" secondAttribute="bottom" constant="40" id="ohN-uq-iDk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="askButton" destination="x2G-rx-u0L" id="Bm2-PB-o0g"/>
+                        <outlet property="ballImageView" destination="uPQ-M5-wdY" id="udq-6m-tnt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.875" y="137.32394366197184"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ball1" width="305" height="273.5"/>
+    </resources>
 </document>
